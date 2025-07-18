@@ -3,35 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weekend Des Jeunes 2025</title>
+  <title>Weekend Des Jeunes</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
 </head>
 
 <body>
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox hidden">
-    <button id="closeLightbox" class="lightbox-close">✖</button>
-    <button id="prevBtn" class="nav-arrow left">⟨</button>
+    <button id="closeLightbox" class="lightbox-close" aria-label="Fermer">✖</button>
+    <button id="prevBtn" class="nav-arrow left" aria-label="Image précédente">⟨</button>
     <img id="lightboxImg" src="" alt="Image en grand">
-    <button id="nextBtn" class="nav-arrow right">⟩</button>
+    <button id="nextBtn" class="nav-arrow right" aria-label="Image suivante">⟩</button>
   </div>
 
   <main id="main-content">
     <header id="header">
       <h1 class="event-title">WEEKEND DES JEUNES</h1>
       <p id="event-dates">
-        <i class="fa-solid fa-calendar-days icon"></i> 29 & 30 AOÛT 2025
+        <i class="fa-solid fa-calendar-days icon" aria-hidden="true"></i> 29 & 30 AOÛT 2025
       </p>
-      <p id="event-location">
-        <i class="fa-solid fa-location-dot icon"></i> ESPACE RIVES PAISIBLES à COMÉ
-      </p>
+      <a href="https://maps.app.goo.gl/qukREFZsJV9NTBTt8" id="event-location" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-location-dot icon" aria-hidden="true"></i> ESPACE RIVES PAISIBLES à COMÉ ↗ 
+      </a>
     </header>
 
     <section id="intro">
       <p class="intro-text">
-        Préparez-vous pour la deuxième édition du Weekend Des Jeunes organisé par <span>kpɛɖido</span> !
+        Préparez-vous pour la deuxième édition du Weekend Des Jeunes organisé par <strong>kpɛɖido</strong> !
         Un événement qui rassemble la jeunesse pour deux jours de festivités inoubliables.
       </p>
       <p class="intro-text">
@@ -49,28 +48,54 @@
       </div>
     </section>
 
+    <div class="alert-banner">
+      <i class="fa-solid fa-clock" aria-hidden="true"></i>
+      <span id="countdown-message">
+        Le paiement des tickets se termine dans <strong id="days-left">x</strong>. Ne tardez pas !
+      </span>
+    </div>
+
     <section id="ticket-section">
       <div class="card">
-        <h6 class="section-title">Obtenir un ticket</h6>
+        <h3 class="section-title">Obtenir un ticket</h3>
         
         <div class="card-section">
-          <p class="section-header"><strong>Pass Weekend — 3500 FCFA</strong></p>
+          <h4 class="section-header"> <i class="fa-solid fa-ticket" aria-hidden="true"></i> <strong>Pass Weekend — 3500 FCFA</strong></h4>
           <ul class="section-content">
-            <li><i class="fa-solid fa-check card-icon"></i> Accès aux 2 jours</li>
-            <li><i class="fa-solid fa-check card-icon"></i> Toutes les activités incluses</li>
+            <li><i class="fa-solid fa-check card-icon" aria-hidden="true"></i> Accès aux 2 jours</li>
+            <li><i class="fa-solid fa-check card-icon" aria-hidden="true"></i> Toutes les activités incluses</li>
           </ul>
         </div>
         
         <div class="card-section">
-          <p class="section-note">
-            <i class="fa-solid fa-info-circle"></i> Paiement via MTN Mobile Money. Après paiement, vous recevrez automatiquement votre ticket par e-mail.
-          </p>
+          <div class="section-note">
+            <p>
+              <i class="fa-solid fa-info-circle" aria-hidden="true"></i> 
+              Paiement via MTN Mobile Money. Après paiement, vous recevrez votre ticket sur WhatsApp.
+            </p>
+          
+            <strong>Étapes à suivre :</strong>
+            <ol>
+              <li>
+                Envoyez <strong>3500 FCFA</strong> au 
+                <strong>
+                  <span id="momo-number">0190501196</span> 
+                  <button id="copy-btn" class="copy-btn" aria-label="Copier le numéro">
+                    <i class="fa-solid fa-copy" title="Copier le numéro"></i>
+                  </button> (Israël Venance AGOLIGAN)
+                </strong>, avec le motif <strong>WDJ</strong>
+              </li>
+              <li>Faites une capture d'écran du paiement</li>
+              <li>Cliquez sur <strong>« Continuer »</strong> ci-dessous</li>
+              <li>Complétez vos informations sur WhatsApp, joignez la capture d'écran, puis envoyez le tout</li>
+            </ol>
+          </div>
         </div>
         
         <div class="card-section center">
-          <a href="#" class="btn ticket-btn">
-            <i class="fa-solid fa-ticket"></i> Acheter maintenant
-          </a>
+          <button class="btn ticket-btn" onclick="openWhatsApp()">
+            <i class="fa-solid fa-check card-icon" aria-hidden="true"></i> Continuer
+          </button>
         </div>
       </div>
     </section>
@@ -81,10 +106,10 @@
       <p class="footer-text">&copy; 2025 kpɛɖido. Tous droits réservés.</p>
       <div class="icons">
         <a href="https://www.facebook.com/profile.php?id=61563823367446&mibextid=rS40aB7S9Ucbxw6v" target="_blank" aria-label="Facebook">
-          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
         </a>
         <a href="https://wa.me/2290190501196" target="_blank" aria-label="WhatsApp">
-          <i class="fab fa-whatsapp"></i>
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
         </a>
       </div>
     </div>
