@@ -7,8 +7,8 @@
 
 body {
   font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #FFF5E0; /* Nouvelle couleur de fond */
-  color: #3a0000; /* Texte principal */
+  background-color: #f9f9f9;
+  color: #333;
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
@@ -37,43 +37,60 @@ img {
 
 a {
   text-decoration: none;
-  color: #aa5c00; /* Couleur des liens */
 }
 
 #img0 {
   display: block;
   margin: 0 auto 1rem auto;
-  width: 100%;
-  max-width: 40%;
+  width: 100%;         /* Utilisé par défaut */
+  max-width: 40%;      /* Limite la largeur sur les grands écrans */
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(106, 52, 0, 0.2); /* Ombre orangée */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .event-title {
   font-size: 2rem;
   font-weight: 800;
-  color: #3a0000;
+  color: #000;
   margin: 2rem 0 1rem 0;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
+.event-title .green {
+  color: #2E7D32; /* vert foncé festif */
+}
+
+.event-title .yellow {
+  color: #FBC02D; /* jaune vif mais lisible */
+}
+
+.event-title .red {
+  color: #D32F2F; /* rouge dynamique et chaleureux */
+}
+
+
 #event-dates,
 #event-location {
   font-size: 1.1rem;
   margin: 0.5rem 0;
-  color: #6f3900cc; /* Texte secondaire */
+  color: #444;
   font-weight: 600;
 }
 
-#event-location:hover {
-  color: #8a4c00; /* Couleur au survol */
+/* Style pour le lien de localisation - Version bleue */
+#event-location {
+  text-decoration: underline;
 }
+
+
 
 .icon {
   margin-right: 0.5rem;
-  color: #aa5c00; /* Nouvelle couleur des icônes */
+  color: #000;
 }
 
 /* INTRO */
@@ -88,7 +105,10 @@ a {
   margin-bottom: 1rem;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #5a2d00; /* Texte légèrement plus clair */
+}
+
+.intro-text strong {
+  color: blue;
 }
 
 /* GALLERY */
@@ -107,20 +127,19 @@ a {
   transition: transform 0.3s, box-shadow 0.3s;
   aspect-ratio: 4/3;
   object-fit: cover;
-  border: 2px solid #ffd8a6; /* Bordure dorée */
 }
 
 .gallery img:hover {
   transform: scale(1.03);
-  box-shadow: 0 5px 15px rgba(170, 92, 0, 0.25); /* Ombre orangée */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* ALERT BANNER */
 .alert-banner {
-  background-color: rgba(255, 213, 158, 0.6); /* Fond orange clair */
-  color: #5a2d00; /* Texte marron */
+  background-color: #fdecea;   /* rouge clair / rose pâle */
+  color: #a94442;              /* rouge sombre pour le texte */
   padding: 1rem;
-  border: 1px solid #ffcc8e;
+  border: 1px solid #f5c6cb;   /* rouge doux pour la bordure */
   border-radius: 8px;
   margin: 1rem auto;
   max-width: 600px;
@@ -128,14 +147,15 @@ a {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  box-shadow: 0 2px 6px rgba(170, 92, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   font-size: 1rem;
 }
 
 .alert-banner i {
-  color: #aa5c00; /* Icône orange */
+  color: #dc3545;             /* rouge vif pour l’icône */
   font-size: 1.3rem;
 }
+
 
 /* TICKET SECTION */
 #ticket-section {
@@ -146,33 +166,32 @@ a {
 }
 
 .card {
-  background-color: #ffffff52; /* Fond blanc transparent */
-  color: #3a0000;
+  background-color: #fff;
+  color: #333;
   border-radius: 16px;
   width: 100%;
   max-width: 500px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(170, 92, 0, 0.15); /* Ombre orangée */
-  border: 1px solid #ffd8a6; /* Bordure dorée */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(170, 92, 0, 0.25);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
 .section-title {
   font-size: 1.1rem;
   font-weight: 600;
-  background-color: rgba(70, 37, 0, 0.67); /* Fond marron transparent */
-  color: #ffd8a6; /* Texte doré */
+  background-color: #f0f0f0;
+  color: #000;
   padding: 1rem 1.5rem;
 }
 
 .card-section {
   padding: 1.2rem 1.5rem;
-  border-bottom: 1px solid #ffd8a685; /* Séparateur doré */
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .card-section:last-child {
@@ -183,7 +202,7 @@ a {
   font-weight: 700;
   font-size: 1.1rem;
   margin-bottom: 0.8rem;
-  color: #5a2d00; /* Texte marron */
+  color: #000;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -199,23 +218,22 @@ a {
   display: flex;
   align-items: flex-start;
   font-size: 1rem;
-  color: #5a2d00; /* Texte marron */
 }
 
 .card-icon {
-  color: #aa5c00; /* Icône orange */
+  color: #28a745;
   margin-right: 10px;
   font-size: 0.9rem;
   margin-top: 4px;
 }
 
 .section-note {
-  background-color: rgba(255, 239, 213, 0.6); /* Fond orange très clair */
+  background-color: #f8f9fa;
   padding: 0.8rem;
   border-radius: 8px;
   font-size: 0.95rem;
-  color: #5a2d00; /* Texte marron */
-  border-left: 3px solid #aa5c00; /* Bordure orange */
+  color: #555;
+  border-left: 3px solid #007bff;
 }
 
 .section-note p {
@@ -233,7 +251,7 @@ a {
 
 .section-note i {
   margin-right: 8px;
-  color: #aa5c00; /* Icône orange */
+  color: #007bff;
 }
 
 .center {
@@ -245,7 +263,7 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #aa5c00, #8a4c00); /* Dégradé orange */
+  background: linear-gradient(to right, #000, #333);
   color: #fff;
   padding: 0.9rem 1.8rem;
   border-radius: 12px;
@@ -264,16 +282,16 @@ a {
 }
 
 .ticket-btn:hover {
-  background: linear-gradient(to right, #8a4c00, #6a3c00); /* Dégradé plus foncé */
+  background: linear-gradient(to right, #222, #444);
   transform: translateY(-2px);
-  box-shadow: 0 7px 15px rgba(170, 92, 0, 0.3);
+  box-shadow: 0 7px 15px rgba(0,0,0,0.15);
 }
 
 .copy-btn {
   background: none;
   border: none;
   cursor: pointer;
-  color: #aa5c00; /* Icône orange */
+  color: #333;
   padding: 0.2rem;
   margin-left: 0.3rem;
   font-size: 1rem;
@@ -282,8 +300,8 @@ a {
 /* FOOTER */
 #site-footer {
   padding: 1.5rem 1rem;
-  background-color: rgba(255, 239, 213, 0.7); /* Fond orange très clair */
-  border-top: 1px solid #ffd8a6; /* Bordure dorée */
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
 }
 
 .footer-container {
@@ -298,7 +316,7 @@ a {
 
 .footer-text {
   font-size: 0.9rem;
-  color: #5a2d00; /* Texte marron */
+  color: #666;
 }
 
 .icons {
@@ -312,14 +330,14 @@ a {
   justify-content: center;
   width: 38px;
   height: 38px;
-  background-color: #aa5c00; /* Fond orange */
+  background-color: #333;
   color: white;
   border-radius: 50%;
   transition: all 0.3s ease;
 }
 
 .icons a:hover {
-  background-color: #8a4c00; /* Orange plus foncé */
+  background-color: #000;
   transform: scale(1.1);
 }
 
@@ -347,8 +365,7 @@ a {
   max-height: 80%;
   margin: 1rem 0;
   border-radius: 5px;
-  box-shadow: 0 0 30px rgba(230, 57, 70, 0.5); /* Ombre rougeâtre */
-  border: 3px solid #F4A261; /* Orange moyen */
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
 .lightbox-close {
@@ -366,7 +383,6 @@ a {
 
 .lightbox-close:hover {
   opacity: 1;
-  color: #F4A261; /* Orange moyen */
 }
 
 .nav-arrow {
@@ -385,7 +401,6 @@ a {
 
 .nav-arrow:hover {
   opacity: 1;
-  color: #F4A261; /* Orange moyen */
 }
 
 .left {
@@ -402,6 +417,7 @@ a {
     max-width: 60%;
   }
 
+  
   .event-title {
     font-size: 1.8rem;
   }
