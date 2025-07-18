@@ -39,6 +39,17 @@ a {
   text-decoration: none;
 }
 
+
+#img0 {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 100%;         /* Utilisé par défaut */
+  max-width: 40%;      /* Limite la largeur sur les grands écrans */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .event-title {
   font-size: 2rem;
   font-weight: 800;
@@ -381,6 +392,10 @@ a {
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
+  #img0 {
+    max-width: 60%;
+  }
+  
   .event-title {
     font-size: 1.8rem;
   }
@@ -416,6 +431,9 @@ a {
 @media (max-width: 480px) {
   #main-content {
     padding: 1.5rem 1rem;
+  }
+  #img0 {
+    max-width: 90%;
   }
   
   .event-title {
