@@ -103,6 +103,10 @@ a {
   line-height: 1.7;
 }
 
+.intro-text strong {
+  color: blue;
+}
+
 /* GALLERY */
 .gallery {
   display: grid;
