@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Countdown functionality and payment status check
-  const paymentDeadline = new Date("2025-08-20T23:59:59"); // Date limite de paiement
+  const paymentDeadline = new Date("2025-08-30T23:59:59"); // Date limite de paiement
   const now = new Date();
   
   const daysSpan = document.getElementById('days-left');
